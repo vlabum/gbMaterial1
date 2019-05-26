@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/bottom_layout"
+        android:orientation="vertical"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="80dp"
+        android:weightSum="100"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+    <View
+            android:id="@+id/bs_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="24dp"
+            android:background="@color/colorPrimaryDark"
+            android:layout_weight="80"/>
+
+    <View
+            android:id="@+id/bs_down"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_weight="20"/>
+
+
+</LinearLayout>
