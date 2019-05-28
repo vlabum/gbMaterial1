@@ -2,17 +2,21 @@
 <FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent" android:layout_height="match_parent"
->
+        xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclier_fragment2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="fragment_dashboard"
                 android:layout_gravity="center"
+                android:paddingTop="60dp"
+                android:paddingBottom="60dp"
+                tools:listitem="@layout/item_user"
         />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </FrameLayout>

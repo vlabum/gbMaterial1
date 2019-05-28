@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+
+    <ImageView
+            android:id="@+id/avatar"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/background_avatar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+
+    <ImageView
+            android:id="@+id/smile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_sentiment_very_satisfied_red_24dp"
+            android:layout_toEndOf="@+id/avatar"/>
+
+    <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/smile"
+            android:layout_marginStart="16dp"
+            android:textSize="20sp"
+            tools:text="Vasilii"
+    />
+
+</RelativeLayout>
