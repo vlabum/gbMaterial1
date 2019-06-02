@@ -42,35 +42,39 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction().replace(R.id.fragment_main, Fragment1()).commit()
 
-        fab.setOnClickListener { view ->
-            var rotated = view.rotation != 0f
-            view.animate().rotation(if (rotated) 0f else 45f)
+        fab.post {
+            fab.setOnClickListener { view ->
+                if (view == null)
+                    return@setOnClickListener
 
-            if (rotated) {
-                fab1.hide()
-                fab2.hide()
-                fab3.hide()
-            } else {
-                fab1.show()
-                fab2.show()
-                fab3.show()
+                var rotated = view.rotation != 0f
+                view.animate().rotation(if (rotated) 0f else 45f)
+
+                if (rotated) {
+                    fab1.hide()
+                    fab2.hide()
+                    fab3.hide()
+                } else {
+                    fab1.show()
+                    fab2.show()
+                    fab3.show()
+                }
+
+                fab1.animate()
+                    .alpha(if (rotated) 0f else 1f)
+                    .translationY(if (rotated) 0f else -fab1.height.toFloat() - 8f)
+                fab2.animate()
+                    .alpha(if (rotated) 0f else 1f)
+                    .translationY(if (rotated) 0f else 2 * (-fab2.height.toFloat() - 8f))
+                fab3.animate()
+                    .alpha(if (rotated) 0f else 1f)
+                    .translationY(if (rotated) 0f else 3 * (-fab3.height.toFloat() - 8f))
             }
 
-            fab1.animate()
-                .alpha(if (rotated) 0f else 1f)
-                .translationY(if (rotated) 0f else -fab1.height.toFloat() - 8f)
-            fab2.animate()
-                .alpha(if (rotated) 0f else 1f)
-                .translationY(if (rotated) 0f else 2 * (-fab2.height.toFloat() - 8f))
-            fab3.animate()
-                .alpha(if (rotated) 0f else 1f)
-                .translationY(if (rotated) 0f else 3 * (-fab3.height.toFloat() - 8f))
+            fab1.hide()
+            fab2.hide()
+            fab3.hide()
         }
-
-        fab1.hide()
-        fab2.hide()
-        fab3.hide()
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
