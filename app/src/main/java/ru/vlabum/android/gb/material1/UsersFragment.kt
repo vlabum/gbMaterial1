@@ -1,16 +1,21 @@
 package ru.vlabum.android.gb.material1
 
 import android.content.Context
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter
 import layout.UserRecyclerAdapter
+import ru.vlabum.android.gb.material1.animation.FlipXAnimator
 
-class Fragment2 : Fragment() {
+class UsersFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,9 +23,26 @@ class Fragment2 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var recyclerView: RecyclerView? = view?.findViewById(R.id.recyclier_fragment2)
-        recyclerView?.layoutManager = LinearLayoutManager(view?.context)
-        recyclerView?.adapter = UserRecyclerAdapter(generateUsers())
+        val recyclerView: RecyclerView? = view.findViewById(R.id.recyclier_users)
+
+        recyclerView?.let {
+            it.layoutManager = LinearLayoutManager(view.context)
+            it.itemAnimator = FlipXAnimator()
+            it.setHasFixedSize(true)
+//            it.adapter = UserRecyclerAdapter(generateUsers())
+            val adapter = UserRecyclerAdapter(
+                generateUsers(),
+                Typeface.createFromAsset(context?.assets, "DancingScript-Regular.otf")
+            )
+            val animationAdapter = ScaleInAnimationAdapter(adapter)
+            it.adapter = animationAdapter
+
+            val snapHelper = LinearSnapHelper()
+            snapHelper.attachToRecyclerView(it)
+
+            val itemTouchHelper = ItemTouchHelper(SimpleItemCallback(adapter))
+            itemTouchHelper.attachToRecyclerView(it)
+        }
     }
 
     override fun onCreateView(
@@ -28,7 +50,7 @@ class Fragment2 : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment2_main, container, false)
+        return inflater.inflate(R.layout.fragment_users_main, container, false)
     }
 
     override fun onAttach(context: Context) {
@@ -39,8 +61,8 @@ class Fragment2 : Fragment() {
         super.onDetach()
     }
 
-    private fun generateUsers(): List<User> {
-        var users = ArrayList<User>()
+    private fun generateUsers(): MutableList<User> {
+        val users = ArrayList<User>()
         context?.resources?.let { res ->
             for (i in 0 until 20) {
                 when (i % 5 == 0) {

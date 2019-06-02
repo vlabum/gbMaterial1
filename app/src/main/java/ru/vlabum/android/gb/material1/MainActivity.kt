@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-                supportFragmentManager.beginTransaction().replace(R.id.fragment_main, Fragment2()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_main, UsersFragment()).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
