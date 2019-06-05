@@ -9,10 +9,10 @@
             android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclier_fragment2"
+                android:id="@+id/recyclier_users"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="fragment_dashboard"
+                android:text="@string/fragment_dashboard"
                 android:layout_gravity="center"
                 android:paddingTop="60dp"
                 android:paddingBottom="60dp"
