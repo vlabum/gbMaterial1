@@ -29,6 +29,10 @@ class MainActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction().replace(R.id.fragment_main, Fragment3()).commit()
                 return@OnNavigationItemSelectedListener true
             }
+            R.id.navigation_smth1 -> {
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_main, Fragment4()).commit()
+                return@OnNavigationItemSelectedListener true
+            }
         }
         false
     }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/root_scene"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        tools:context=".Fragment4">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_f4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:layout_marginEnd="@dimen/fab_dimenEnd"
+            app:layout_anchorGravity="end|top"
+            app:layout_anchor="@id/nav_view"
+            app:srcCompat="@android:drawable/ic_dialog_dialer"/>
+
+    <include layout="@layout/scene1"/>
+
+</FrameLayout>

@@ -14,4 +14,9 @@
             android:id="@+id/navigation_notifications"
             android:icon="@drawable/ic_notifications_black_24dp"
             android:title="@string/menu_title_notifications"/>
+
+    <item
+            android:id="@+id/navigation_smth1"
+            android:icon="@drawable/ic_verified_user_black_24dp"
+            android:title="@string/smth1"/>
 </menu>
