@@ -14,8 +14,16 @@ import androidx.recyclerview.widget.RecyclerView
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter
 import layout.UserRecyclerAdapter
 import ru.vlabum.android.gb.material1.animation.FlipXAnimator
+import ru.vlabum.android.gb.material1.entity.Friend
+import ru.vlabum.android.gb.material1.entity.User
 
-class UsersFragment : Fragment() {
+class UsersFragment() : Fragment() {
+
+    private var isFriendOnly = false
+
+    constructor(isFriendOnly: Boolean) : this() {
+        this.isFriendOnly = isFriendOnly
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +37,6 @@ class UsersFragment : Fragment() {
             it.layoutManager = LinearLayoutManager(view.context)
             it.itemAnimator = FlipXAnimator()
             it.setHasFixedSize(true)
-//            it.adapter = UserRecyclerAdapter(generateUsers())
             val adapter = UserRecyclerAdapter(
                 generateUsers(),
                 Typeface.createFromAsset(context?.assets, "DancingScript-Regular.otf")
@@ -67,9 +74,15 @@ class UsersFragment : Fragment() {
             for (i in 0 until 20) {
                 when (i % 5 == 0) {
                     true ->
-                        users.add(Friend(res.getIdentifier("p${i % 10}", "drawable", context?.packageName), "Vasya $i"))
+                        users.add(
+                            Friend(res.getIdentifier("p${i % 10}", "drawable", context?.packageName), "Vasya $i")
+                        )
                     else ->
-                        users.add(User(res.getIdentifier("p${i % 10}", "drawable", context?.packageName), "Vasya $i"))
+                        if (!isFriendOnly) {
+                            users.add(
+                                User(res.getIdentifier("p${i % 10}", "drawable", context?.packageName), "Vasya $i")
+                            )
+                        }
                 }
             }
         }
