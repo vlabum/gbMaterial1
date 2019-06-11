@@ -33,6 +33,14 @@ class Main2Activity : AppCompatActivity() {
 
         viewPager.setPageTransformer(true, AccordionTransformer())
 
+        fabLogin.setOnClickListener {
+            login()
+        }
+
+    }
+
+    private fun login() {
+
     }
 
 }
