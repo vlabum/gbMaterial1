@@ -12,4 +12,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fragment_dashboard">fragment_dashboard</string>
     <string name="smth1">Smth1</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>

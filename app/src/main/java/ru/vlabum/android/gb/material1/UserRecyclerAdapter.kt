@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import ru.vlabum.android.gb.material1.Friend
 import ru.vlabum.android.gb.material1.R
 import ru.vlabum.android.gb.material1.SimpleItemAdapter
-import ru.vlabum.android.gb.material1.User
+import ru.vlabum.android.gb.material1.entity.Friend
+import ru.vlabum.android.gb.material1.entity.User
 import java.util.*
 
 class UserRecyclerAdapter(val users: MutableList<User>, val typeface: Typeface) :
