@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:showIn="@layout/activity_main3_details"
+        android:id="@+id/include"
+        tools:context=".Main3Activity">
+
+    <ImageView
+            android:id="@+id/sun"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:src="@drawable/ic_wb_sunny_black_24dp"
+            android:tint="#FFCF00"
+            android:layout_marginTop="64dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+    />
+
+    <ImageView
+            android:id="@+id/planet1"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:src="@drawable/ic_sentiment_very_satisfied_red_24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/sun"
+            app:layout_constraintStart_toStartOf="parent"
+    />
+
+    <ImageView
+            android:id="@+id/planet2"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:src="@drawable/ic_sentiment_very_satisfied_red_24dp"
+            android:tint="#1111FF"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/planet1"
+            app:layout_constraintStart_toStartOf="parent"
+    />
+
+    <ImageView
+            android:id="@+id/planet3"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:src="@drawable/ic_sentiment_very_satisfied_red_24dp"
+            android:tint="#FF11FF"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/planet2"
+            app:layout_constraintStart_toStartOf="parent"
+    />
+
+    <TextView
+            android:id="@+id/sun_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sun"
+            android:textSize="24sp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/sun"
+            app:layout_constraintBottom_toBottomOf="@+id/sun"
+    />
+
+    <TextView
+            android:id="@+id/venus_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Venus"
+            android:textSize="24sp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/planet1"
+            app:layout_constraintBottom_toBottomOf="@+id/planet1"
+    />
+
+    <TextView
+            android:id="@+id/earth_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Earth"
+            android:textSize="24sp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/planet2"
+            app:layout_constraintBottom_toBottomOf="@+id/planet2"
+    />
+
+    <TextView
+            android:id="@+id/mars_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mars"
+            android:textSize="24sp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/planet3"
+            app:layout_constraintBottom_toBottomOf="@+id/planet3"
+    />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline"
+            app:layout_constraintGuide_begin="116dp"
+            android:orientation="vertical"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

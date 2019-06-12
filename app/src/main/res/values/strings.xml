@@ -13,4 +13,5 @@
     <string name="fragment_dashboard">fragment_dashboard</string>
     <string name="smth1">Smth1</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_main3">Main3Activity</string>
 </resources>
